@@ -1,11 +1,11 @@
 import { connectDB } from "@/lib/db";
-import { ContactModel } from "@/models/contacts";
+import Contact from "@/models/contacts";
 
 export default async function getDataResult(sort) {
   try {
     await connectDB();
 
-    const data = await ContactModel.find({}, undefined, {
+    const data = await Contact.find({}, undefined, {
       sort: {
         createdAt: sort === "-1" ? -1 : 1,
       },

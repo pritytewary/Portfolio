@@ -1,6 +1,6 @@
 import { errorHandler } from "@/lib/api/error";
 
-import { ContactModel } from "@/models/contacts";
+import Contact from "@/models/contacts";
 
 import { connectDB } from "@/lib/db/index";
 
@@ -9,7 +9,7 @@ export default async function contact(req, res) {
     await connectDB();
     const body = req.body;
 
-    const create = await ContactModel.create({
+    const create = await Contact.create({
       name: body.name,
       phone: body.phone,
       email: body.email,

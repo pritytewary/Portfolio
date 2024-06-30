@@ -1,9 +1,6 @@
-import mongoose from "mongoose";
-const Schema = mongoose.Schema;
+import mongoose, { Schema } from "mongoose";
 
-const modelName = "ContactModel";
-
-const modelSchema = new Schema(
+const contactSchema = new Schema(
   {
     name: {
       type: String,
@@ -31,8 +28,6 @@ const modelSchema = new Schema(
   }
 );
 
-if (!mongoose.models[modelName]) {
-  mongoose.model(modelName, modelSchema);
-}
-
-export default mongoose.models[modelName];
+const Contact =
+  mongoose.models.Contact || mongoose.model("Contact", contactSchema);
+export default Contact;
