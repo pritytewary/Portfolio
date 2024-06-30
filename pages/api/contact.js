@@ -1,6 +1,6 @@
 import { errorHandler } from "@/lib/api/error";
 
-import ContactModel from "@/models/contacts";
+import ContactModel from "../../models/contacts";
 
 import { connectDB } from "@/lib/db/index";
 

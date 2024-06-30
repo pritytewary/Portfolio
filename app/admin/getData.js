@@ -1,5 +1,5 @@
 import { connectDB } from "@/lib/db";
-import ContactModel from "@/models/contacts";
+import ContactModel from "../../models/contacts";
 
 export default async function getDataResult(sort) {
   try {
